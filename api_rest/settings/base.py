@@ -31,6 +31,7 @@ LOCAL_APPS = [
 
 THIRD_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
     'simple_history',
 ]
 
@@ -46,6 +47,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
 ]
+
+TOKEN_EXPIRED_AFTER_SECONDS = 30
 
 ROOT_URLCONF = 'api_rest.urls'
 

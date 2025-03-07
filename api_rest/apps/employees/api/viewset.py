@@ -4,9 +4,10 @@ from rest_framework import viewsets
 from rest_framework import status
 
 from api_rest.apps.employees.api.serializers import EmployeeSerializer
+from api_rest.apps.users.authentication_mixins import Authentication
 
 
-class EmployeeViewSet(viewsets.ModelViewSet):
+class EmployeeViewSet(Authentication, viewsets.ModelViewSet):
     serializer_class = EmployeeSerializer
     def get_queryset(self, pk=None):
         if pk is None:
